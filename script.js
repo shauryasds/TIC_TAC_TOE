@@ -1,7 +1,6 @@
 console.log("welcome to tic tac toe");
 let boxes = document.getElementsByClassName("box");
-let music = new Audio("music.mp3");
-let audioTurn = new Audio("/ting.mp3");
+let audioTurn = new Audio("ting.mp3");
 let gameOver = new Audio("gameOver.mp3");
 let turn = "X";
 let isgameOver = false;
@@ -67,10 +66,12 @@ Array.from(boxes).forEach((element) => {
     }
     if (boxText.innerText === "" && isgameOver===false) {
       boxText.innerText = turn;
-    }
     turn = changeTurn();
-    audioTurn.play();
-    checkWin();
+      audioTurn.play();
+       checkWin();
+    }
+    
+   
     if (!isgameOver)
       document.getElementsByClassName("info")[0].innerText = "Turn for " + turn;
   });
